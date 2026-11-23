@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="kicker">TOKEN LAUNCH RADAR · MODEL RADAR-2</p>
+    <h1>Protocols with no token yet, ranked by what a launch could be worth</h1>
+    <p class="lede" id="lede"></p>
+    <p class="model" id="model-line"></p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="controls" aria-label="Board controls">
+    <input id="q" type="search" placeholder="Search a protocol…" aria-label="Search protocols" autocomplete="off">
+    <select id="cat" aria-label="Filter by category"></select>
+    <select id="chain" aria-label="Filter by chain"></select>
+    <div class="tabs" role="tablist">
+      <button id="tab-board" role="tab" aria-selected="true">Pre-token board</button>
+      <button id="tab-live" role="tab" aria-selected="false">Live tokens</button>
+    </div>
+  </section>
+  <p class="count" id="count"></p>
+  <div class="table-wrap">
+    <table id="board">
+      <colgroup><col style="width:46px"><col><col style="width:160px"><col style="width:100px"><col style="width:92px"><col style="width:84px"><col style="width:60px"><col style="width:128px"></colgroup>
+      <thead><tr>
+        <th data-sort="rank">#</th>
+        <th data-sort="name">Protocol</th>
+        <th data-sort="category">Category</th>
+        <th data-sort="chains">Chains</th>
+        <th data-sort="tvl_usd" class="num">TVL</th>
+        <th data-sort="change_7d" class="num">7d</th>
+        <th data-sort="age_days" class="num">Age</th>
+        <th data-sort="implied_value_usd" class="num">Implied value</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <section id="detail" class="detail" hidden></section>
+  <footer class="foot">
+    <p id="source-line"></p>
+    <p>Implied value is this radar's own claim from the snapshot's figures — TVL, seven-day growth and age with no token. It is not a prediction that a token launches, or when. A protocol "records no token" when its DefiLlama record carries none; that is not proof it has none.</p>
+  </footer>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
